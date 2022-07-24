@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const session  = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
-const validator = require('express-validator');
+const expressValidator = require('express-validator');
 const MongoStore = require('connect-mongo');
 const {mongoDbUrl} = require('./config/env');
 
@@ -32,7 +32,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(validator());
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(session({
     secret: 'secret',
