@@ -45,7 +45,7 @@ const products = [
     }),
     new Product({
         imagePath: 'SunnyBB.jpeg',
-        title: 'SunnyBB.jpeg',
+        title: 'SUNNY SIDE BOUQUET',
         description: "Vibrant yellows contrast with crisp whites to brighten special summer occasions.",
         price: 400
     }),
