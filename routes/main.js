@@ -13,9 +13,14 @@ router.get('/', function(req, res, next) {
         for (let i = 0; i < docs.length; i += chunkSize) {
           productChunks.push(docs.slice(i, i  + chunkSize));
         }
-        res.render('shop/index', { title: 'Shopping cart', products: productChunks, successMgs: successMgs, noMessage: !successMgs });
+        res.render('shop/index', { title: 'Flower Shop', products: productChunks, successMgs: successMgs, noMessage: !successMgs });
     }).lean();
 });
 
+/*
+ * API
+ */
+
+router.get("/api/products", (req, res, next) => Product.find((err, products) => res.send({products: products})).lean())
 
 module.exports = router;

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
+    "serve": "node ./bin/www",
     "migration:write": "node migrations/products-migration.js"
   },
   "dependencies": {
