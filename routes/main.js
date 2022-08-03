@@ -23,4 +23,16 @@ router.get('/', function(req, res, next) {
 
 router.get("/api/products", (req, res, next) => Product.find((err, products) => res.send({products: products})).lean())
 
+router.post("/api/products", function(req, res, next) {
+  new Product({
+    imagePath: req.body.imagePath,
+    title: req.body.title,
+    description: req.body.description,
+    price: parseInt(req.body.price)
+  }).save(function(err, result) {
+    res.send(result)
+  })
+})
+
+
 module.exports = router;
